@@ -2,10 +2,10 @@
 
 namespace Model;
 
-require 'model/DatabaseModel.php';
-use Model\Database;
+// require 'model/DatabaseModel.php';
+use Model\DatabaseModel;
 
-class DirectoryModel extends Database
+class DirectoryModel extends DatabaseModel
 {
 
     protected static $db = '';
