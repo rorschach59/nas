@@ -32,7 +32,12 @@ class SidebarController
         foreach($content as $value) {
             array_push($directories,explode('/', $value['path']));            
         }        
-    
+        
+        foreach ($directories as $key => $value) {
+            //dump(count($value));
+        }
+
+
         $link = 'http://192.168.1.16/fonctions/';
         $get = '?';
         
