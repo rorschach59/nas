@@ -1,9 +1,7 @@
-<?php
-// var_dump($sidebarContent);
-?>
-
 <div class="nav-side-menu">
-    <div class="brand">Brand Logo</div>
+    <div class="brand">
+        <a href="/nas"><i class="fas fa-2x fa-sitemap"></i></a>
+    </div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
     <div class="menu-list text-center">
         <ul id="menu-content" class="menu-content collapse out">
@@ -17,25 +15,36 @@
                     </div>
                 </div>
             </form>
-            <?php
-            foreach ($sidebarContent as $key => $value) {
-                $get = '?directory='.$value[0]; ?>
-            <li>
-                <a href="<?php echo $get; ?>">
-                <i class="fa fa-life-ring fa-lg fa-fw sidebar-icon"></i> <?php echo $value[0]; ?>
-                </a>
-            <?php if (count($value) > 1) { ?>
-                <i data-toggle="collapse" data-target="#<?php echo $value[0]; ?>" class="collapsed fas fa-arrow-down"></i>
-            <?php } ?>
-            </li>
-            <ul class="sub-menu collapse" id="<?php echo $value[0]; ?>">
-                <?php for ($i = 1; $i < count($value); $i++) { 
-                    $get .= '&directory_'.$i.'='.$value[$i]; 
-                ?>
-                <li>
-                    <a href="<?php echo $get; ?>"><i class="fa fa-angle-double-right"></i> <?php echo $value[$i]; ?></a>
-                </li>
-            <?php } echo '</ul>'; } ?>
+            <?php $sidebarController::mkmap('/home/nas'); ?>
         </ul>
     </div>
 </div>
+
+<script>
+
+window.onload = function() {
+
+    for(var i = 0; i < $('.dirSidebar li').length; i++)
+    {
+        var _content = $('.dirSidebar li').eq(i).next().html()
+    
+        if(_content.length > 0 && $('.dirSidebar li').eq(i) !== $('.dirSidebar li:first')) {
+            var _directory = $('.dirSidebar li').eq(i);
+            var _file = $('.dirSidebar li').eq(i).data('file');
+            var _next = $('.dirSidebar li').eq(i).next();
+            _directory.append('<i data-toggle=\"collapse\" data-target=\"#'+_file+'\" class=\"collapsed fas fa-sort-down\"></i>');
+            _next.addClass('sub-menu collapse');
+            _next.attr('id', _file);
+
+        }
+    }
+
+    $('.fa-sort-down').click(function() {
+        var _this = $(this);
+        _this.toggleClass('fa-sort-down');
+        _this.toggleClass('fa-sort-up');
+    });
+
+};
+
+</script>

@@ -23,6 +23,13 @@ body {
   text-align: center;
   font-size: 14px;
 }
+.nav-side-menu .brand a {
+  color : white;
+  margin-top: 5%;
+}
+.nav-side-menu .brand i {
+  margin-top: 5%;
+}
 .nav-side-menu .toggle-btn {
   display: none;
 }
@@ -109,8 +116,12 @@ body {
 }
 .nav-side-menu li .sub-menu li a,
 .nav-side-menu ul .sub-menu li a{
-    display: block;
+    /* display: block; */
     padding-left: 20px;
+}
+.nav-side-menu li i,
+.nav-side-menu ul i{
+    padding-left: 5px;
 }
 .nav-side-menu ul .sub-menu li a i,
 .nav-side-menu li .sub-menu li a i{

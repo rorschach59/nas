@@ -14,11 +14,15 @@ spl_autoload_register(function($class) {
 
 const PATH_VIEWS = 'view';
 
+// dump(explode('/',$_SERVER['REQUEST_URI']));
+
 // Init the router
 $engine = new \League\Plates\Engine(PATH_VIEWS);
+// $u = \League\Url\Url::createFromServer($_SERVER);
+
 $sidebarController = new Controller\SidebarController();
-$sidebarContent = $sidebarController->getMenuContent();
 
 echo $engine->render('common/header', compact(''));
-echo $engine->render('common/sidebar', compact('sidebarContent'));
+echo $engine->render('common/sidebar', compact('sidebarController'));
+echo $engine->render('home', compact(''));
 echo $engine->render('common/footer', compact(''));
