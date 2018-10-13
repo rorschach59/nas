@@ -1,3 +1,25 @@
+<?php 
+
+function mkmap($dir)
+    {
+        echo "<ul class=\"dirSidebar\">";
+        $folder = opendir($dir);
+        while ($file = readdir($folder)) {
+            if ($file != "." && $file != "..") {
+                   $pathfile = $dir.'/'.$file;
+                   echo "<li data-file=\"$file\"><a href=$pathfile>$file</a></li>";
+   
+                   if (filetype($pathfile) == 'dir') {
+                       mkmap($pathfile);
+                   }
+            }
+        }
+        closedir($folder);
+        echo "</ul>";
+    }
+
+?>
+
 <div class="nav-side-menu">
     <div class="brand">
         <a href="/nas"><i class="fas fa-2x fa-sitemap"></i></a>
@@ -15,7 +37,7 @@
                     </div>
                 </div>
             </form>
-            <?php $sidebarController::mkmap('/home/nas'); ?>
+            <?php mkmap('/home/nas'); ?>
         </ul>
     </div>
 </div>

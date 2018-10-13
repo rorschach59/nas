@@ -2,7 +2,7 @@
 
 namespace Model;
 
-// require 'model/DatabaseModel.php';
+require 'model/DatabaseModel.php';
 use Model\DatabaseModel;
 
 class DirectoryModel extends DatabaseModel

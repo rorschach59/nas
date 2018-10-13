@@ -1,7 +1,6 @@
-<?php
+<div class="main">
 
-require '../controller/SubscribeController.php';
-use Controller\SubscribeController;
+    <?php echo current($subscribe); ?>
+    <?php echo current($subscrib); ?>
 
-$subscribe = new SubscribeController();
-$subscribe->showIndex();
+</div>

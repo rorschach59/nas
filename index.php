@@ -3,26 +3,17 @@
 // Require libraries
 require 'vendor/autoload.php';
 
-// Require auto controller
+// Autoload classes
 spl_autoload_register(function($class) {
-    $file = 'controller/'.substr($class, 11).'.php';
-    
+    $file = 'controller/'.$class.'.php';
+
     if(file_exists($file)) {
         require $file;
     }
 });
 
+// Path to the views
 const PATH_VIEWS = 'view';
 
-// dump(explode('/',$_SERVER['REQUEST_URI']));
-
-// Init the router
-$engine = new \League\Plates\Engine(PATH_VIEWS);
-// $u = \League\Url\Url::createFromServer($_SERVER);
-
-$sidebarController = new Controller\SidebarController();
-
-echo $engine->render('common/header', compact(''));
-echo $engine->render('common/sidebar', compact('sidebarController'));
-echo $engine->render('home', compact(''));
-echo $engine->render('common/footer', compact(''));
+// Return the view called with the datas
+RouterController::router();

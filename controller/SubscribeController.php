@@ -1,11 +1,12 @@
 <?php
 
-namespace Controller;
-
-class SubscribeController
+class SubscribeController extends DefaultController
 {
-    public function showIndex()
+    public static function index()
     {
-        echo 'subscribe.php';
+        $data = array('subscribe.php');
+        $subscribe = array('variable subscribe');
+        $subscrib = array('variable subscrib');
+        return DefaultController::show('subscribe', compact('data','subscribe','subscrib'));
     }
 }
