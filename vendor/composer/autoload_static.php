@@ -7,12 +7,17 @@ namespace Composer\Autoload;
 class ComposerStaticInitbc00360ce4edf26c17b1d60cf3f49486
 {
     public static $files = array (
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '20f378a8a84881cf108b4428c19cf452' => __DIR__ . '/..' . '/league/uri-hostname-parser/src/functions_include.php',
         'e1e8b49c332434256b5df11b0f0c2a62' => __DIR__ . '/..' . '/league/uri-parser/src/functions_include.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '48197193621c5ab80fbc196827e806d1' => __DIR__ . '/..' . '/league/uri-components/src/functions_include.php',
         '244240de28ad61783068aef6c6b63aea' => __DIR__ . '/..' . '/league/uri-schemes/src/functions_include.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'eadffebc88609f262c6ec51faebeac60' => __DIR__ . '/..' . '/league/uri-manipulations/src/functions_include.php',
+        'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
+        '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
     );
 
@@ -30,13 +35,26 @@ class ComposerStaticInitbc00360ce4edf26c17b1d60cf3f49486
         array (
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Http\\Message\\' => 17,
-            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'L' => 
         array (
             'League\\Url\\' => 11,
             'League\\Uri\\' => 11,
             'League\\Plates\\' => 14,
+        ),
+        'J' => 
+        array (
+            'JmesPath\\' => 9,
+        ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
+        ),
+        'A' => 
+        array (
+            'Aws\\' => 4,
         ),
     );
 
@@ -61,10 +79,6 @@ class ComposerStaticInitbc00360ce4edf26c17b1d60cf3f49486
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'PHPMailer\\PHPMailer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
-        ),
         'League\\Url\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/url/src',
@@ -81,6 +95,26 @@ class ComposerStaticInitbc00360ce4edf26c17b1d60cf3f49486
         'League\\Plates\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/plates/src',
+        ),
+        'JmesPath\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mtdowling/jmespath.php/src',
+        ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Aws\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/aws/aws-sdk-php/src',
         ),
     );
 

@@ -25,8 +25,11 @@ class DefaultController
         $engine = new \League\Plates\Engine(PATH_VIEWS);
 
         // Notification message
-        $flash_message = (isset($_SESSION['flash']) && !empty($_SESSION['flash'])) ? (object) $_SESSION['flash'] : null;
+        // $flash_message = (isset($_SESSION['flash']) && !empty($_SESSION['flash'])) ? (object) $_SESSION['flash'] : null;
 
+        $flash_message = self::flashMessage();
+
+        $engine->addData( compact('flash_message') );
         // Add each datas to the view
         foreach($data as $key => $value) {
             $engine->addData( [ $key => $value ] );
@@ -48,6 +51,22 @@ class DefaultController
         die();
     }
 
+    private static function flashMessage()
+    {
+
+        $flash_message = (isset($_SESSION['flash']) && !empty($_SESSION['flash'])) ? (object) $_SESSION['flash'] : null;
+
+        if(isset($flash_message) && !empty($flash_message)) {
+            return '
+            <div class="alert alert-'.$flash_message->level.' alert-dismissible fade show" role="alert">
+                '.$flash_message->message.'
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>';
+        }
+
+    }
 
  
 

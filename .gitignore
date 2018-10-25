@@ -1,1 +1,3 @@
 model/DatabaseModel.php
+controller/AwsController.php
+vhost.conf

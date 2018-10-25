@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Require libraries
 require 'vendor/autoload.php';
 
@@ -12,8 +14,9 @@ spl_autoload_register(function($class) {
     }
 });
 
-// Path to the views
 const PATH_VIEWS = 'view';
+const PATH_UPLOAD = '/home/nas';
+const DOMAINE = 'http://192.168.1.17/nas/';
 
 // Return the view called with the datas
 RouterController::router();
